@@ -1,0 +1,16 @@
+Introdurre i meccanismi di autenticazione e autorizzazione.
+Gli utenti sono caratterizzati da username, password, email (tutti campi obbligatori) e gli account possono essere abilitati o meno.
+I valori di username ed email devono essere univoci.
+Sono previsti due ruoli: “ADMIN” e “USER”.
+Ad un utente possono essere associati più ruoli.
+Utenti e ruoli devono essere mappati rispettivamente sulle omonime tabelle del database.
+Prevedere due endpoint per le operazioni di registrazione e autenticazione.
+La registrazione richiede il passaggio dei dati relativi a username, password, email ed una eventuale lista di stringhe relative ai ruoli (es.
+admin, user) che possono essere indicati in maiuscolo e/o in minuscolo.
+In assenza di indicazioni specifiche di default verrà impostato il ruolo “USER”. 
+La procedura di autenticazione richiede il passaggio delle credenziali username e password e restituisce, in caso di esito positivo, il token
+JWT e la lista di ruoli associati all’utente.
+Le operazioni di lettura sono accessibili agli utenti autenticati con qualsiasi ruolo, mentre quelle di scrittura (aggiunta, modifica,
+cancellazione) sono riservate esclusivamente agli utenti con ruolo “ADMIN”.
+Implementare i principali test di integrazione per verificare il corretto funzionamento degli endpoint.
+Predisporre dei dati di test da caricare in fase di avvio dell’applicazione.
